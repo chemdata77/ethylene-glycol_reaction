@@ -11,7 +11,8 @@ import docx
 from urllib3.connectionpool import xrange
 
 
-path_model = '化学反应.docx'
+path_model = 'Reactant_reactions.docx'
+#path_model = 'out_reactions.docx'
 # document = docx.Document(path_model)
 document = Document()
 #增加表格
@@ -28,6 +29,7 @@ hdr_cells[5].text = 'all_positive'
 #row_cells = table.add_row().cells
     
 with open('Reactant_reactions_all.txt', 'rb') as fp:  
+#with open('out_reactions_all.txt', 'rb') as fp:
     b = pickle.load(fp) 
 
 for i in range(len(b)):
@@ -35,6 +37,7 @@ for i in range(len(b)):
     for j in range(3):
         run=table.cell(i+1,j).paragraphs[0].add_run() 
         picture =run.add_picture("/root/qzh/e2e_reaction_test/homolumo/picture/"+str(b[i][j])+".png")
+        #picture =run.add_picture("/root/qzh/e2e_reaction_test/homolumo/picture_out/"+str(b[i][j])+".png")
         picture.height=Cm(3)
         picture.width=Cm(3)
         
