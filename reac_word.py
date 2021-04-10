@@ -11,7 +11,7 @@ import docx
 from urllib3.connectionpool import xrange
 
 
-path_model = '化学反应.docx'
+path_model = 'Reactant_reactions.docx'
 # document = docx.Document(path_model)
 document = Document()
 #增加表格
