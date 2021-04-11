@@ -41,7 +41,7 @@ for i in range(len(b)):
         picture.height=Cm(3)
         picture.width=Cm(3)
         
-    row_cells[3].text = str(b[i][3])+'('+str(b[i][4])+')'
+    row_cells[3].text = str(b[i][3])+'\n'+'('+str(b[i][4])+')'
     row_cells[4].text = str(b[i][5])
     row_cells[5].text = str(b[i][6])
 
