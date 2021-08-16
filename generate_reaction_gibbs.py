@@ -97,9 +97,9 @@ def multi_thd_reac(reac_lst_orig):
     lumo_r, homo_r = 0, 0
     if(judgment_mode == 0):
         if(g1+g2-g3>0): # A + B => C
-            ret.append(-1)
+            ret.append(1)
         else:
-            ret.append(1) # C => A + B
+            ret.append(-1) # C => A + B
         ret.append(g1+g2-g3)
     elif(judgment_mode == 1):
         if(abs(lumo2-homo1) < abs(lumo1-homo2)):
@@ -109,14 +109,14 @@ def multi_thd_reac(reac_lst_orig):
             lumo_r = lumo1
             homo_r = homo2
         if(lumo3 > lumo_r and homo3 < homo_r):
-            ret.append(-1) # A + B => C
+            ret.append(1) # A + B => C
         else:
-            ret.append(1) # C => A + B
+            ret.append(-1) # C => A + B
     elif(judgment_mode == 2):
         if(random.random()>0.5):
-            ret.append(-1)
-        else:
             ret.append(1)
+        else:
+            ret.append(-1)
     elif(judgment_mode == 3):
         if(abs(lumo2-homo1) < abs(lumo1-homo2)):
             lumo_r = lumo2
@@ -125,9 +125,9 @@ def multi_thd_reac(reac_lst_orig):
             lumo_r = lumo1
             homo_r = homo2
         if((lumo3 > lumo_r and homo3 < homo_r) and (g1+g2-g3>0)): # A + B => C
-            ret.append(-1)
+            ret.append(1)
         else:
-            ret.append(1) # C => A + B
+            ret.append(-1) # C => A + B
     else:
         pass
     return ret
